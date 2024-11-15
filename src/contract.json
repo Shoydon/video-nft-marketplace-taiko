@@ -1,0 +1,97 @@
+{
+    "address": "0x1E46547F8bBfEFf2Ab64D8446f55918d683E6A04",
+    "abi": [
+      {
+        "type": "constructor",
+        "inputs": [],
+        "stateMutability": "nonpayable"
+      },
+      {
+        "type": "function",
+        "name": "addFile",
+        "inputs": [
+          {
+            "name": "_ipfsHash",
+            "type": "string",
+            "internalType": "string"
+          },
+          {
+            "name": "_price",
+            "type": "uint256",
+            "internalType": "uint256"
+          }
+        ],
+        "outputs": [],
+        "stateMutability": "payable"
+      },
+      {
+        "type": "function",
+        "name": "fileCount",
+        "inputs": [],
+        "outputs": [
+          {
+            "name": "",
+            "type": "uint256",
+            "internalType": "uint256"
+          }
+        ],
+        "stateMutability": "view"
+      },
+      {
+        "type": "function",
+        "name": "videosCount",
+        "inputs": [],
+        "outputs": [
+          {
+            "name": "",
+            "type": "uint256",
+            "internalType": "uint256"
+          }
+        ],
+        "stateMutability": "view"
+      },
+      {
+        "type": "function",
+        "name": "viewFiles",
+        "inputs": [],
+        "outputs": [
+          {
+            "name": "",
+            "type": "tuple[]",
+            "internalType": "struct VideoNft.VideoFile[]",
+            "components": [
+              {
+                "name": "owner",
+                "type": "address",
+                "internalType": "address"
+              },
+              {
+                "name": "ipfsHash",
+                "type": "string",
+                "internalType": "string"
+              },
+              {
+                "name": "price",
+                "type": "uint256",
+                "internalType": "uint256"
+              }
+            ]
+          }
+        ],
+        "stateMutability": "view"
+      },
+      {
+        "type": "function",
+        "name": "watchVideo",
+        "inputs": [
+          {
+            "name": "_index",
+            "type": "uint256",
+            "internalType": "uint256"
+          }
+        ],
+        "outputs": [],
+        "stateMutability": "payable"
+      }
+    ]
+}
