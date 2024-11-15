@@ -49,22 +49,23 @@ function App() {
 
   
   useEffect(() => {
+    setLoading(true)
     const provider = new ethers.providers.Web3Provider(window.ethereum);
 
     const loadProvider = async () => {
       if (provider) {
-        window.ethereum.on("chainChanged", (newChain) => {
-          setChainId(newChain); 
-          console.log(newChain);
-          console.log(chainId);
-          window.location.href = "/"; // Redirect using window.location
-          // window.location.reload()
-        });
+        // window.ethereum.on("chainChanged", (newChain) => {
+        //   setChainId(newChain); 
+        //   console.log(newChain);
+        //   console.log(chainId);
+        //   window.location.href = "/"; // Redirect using window.location
+        //   // window.location.reload()
+        // });
 
-        window.ethereum.on("accountsChanged", () => {
-          window.location.href = "/"; // Redirect using window.location
-          // window.location.reload();
-        });
+        // window.ethereum.on("accountsChanged", () => {
+        //   window.location.href = "/"; // Redirect using window.location
+        //   // window.location.reload();
+        // });
         
         await provider.send("eth_requestAccounts", []);
         const signer = provider.getSigner();
@@ -96,6 +97,7 @@ function App() {
     };
 
     provider && loadProvider();
+    setLoading(false)
   }, []);
 
 
@@ -104,7 +106,7 @@ function App() {
       <ToastContainer />
       <div className="App min-h-screen">
         <div className='gradient-bg-welcome h-screen w-screen'>
-          <Nav account={account} />
+          <Nav account={account} loading={loading}/>
           <Routes>
             <Route path="/" element={<Home />}></Route>
             <Route path="/all-nft" element={<NFTs marketplace={marketplace} setNFTitem={setNFTitem} account={account} setMarketplace={setMarketplace}/>}></Route>

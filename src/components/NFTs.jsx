@@ -104,7 +104,7 @@ function NFTs({ marketplace, setMarketplace, account, setNFTitem }) {
         {
           (items.length > 0 ?
             items.map((item, idx) => (
-              <Cards item={item} currNft={currNft} player={player} setPlayer={setPlayer} setCurrNft={setCurrNft} account={account} idx={idx} processing={processing} setProcessing={setProcessing} />
+              <Cards item={item} currNft={currNft} player={player} setPlayer={setPlayer} setCurrNft={setCurrNft} account={account} idx={idx} processing={processing} setProcessing={setProcessing} marketplace={marketplace} />
             ))
 
             : (

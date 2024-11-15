@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-function Nav({account}) {
+function Nav({account, loading}) {
   return (
    <>
 <div class="fixed z-10 backdrop-blur-sm">
@@ -13,7 +13,7 @@ function Nav({account}) {
           Ignitus Networks
         </a>
        
-        <ul class="md:flex px-4 mx-auto font-semibold font-heading space-x-7">
+        <ul class="md:flex px-4 mx-auto font-semibold font-heading space-x-7" aria-disabled={loading}>
           <Link className='no-underline text-gray-200' as={Link} to="/">
           <li>Home</li>   </Link>
           <Link className='no-underline text-gray-200' as={Link} to="/all-nft">

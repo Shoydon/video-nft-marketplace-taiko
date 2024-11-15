@@ -10,22 +10,23 @@ import { toast } from 'react-toastify'
 import contractData from '../contract.json'
 
 
-function Cards({ item, currNft, player, setPlayer, setCurrNft, account, idx, processing, setProcessing }) {
+function Cards({ item, currNft, player, setPlayer, setCurrNft, account, idx, processing, setProcessing, marketplace }) {
 
   console.log(processing);
   
   async function handlePayment(item) {
     setProcessing(true)
     try {
-      const provider = new ethers.providers.Web3Provider(window.ethereum);
-      await provider.send("eth_requestAccounts", []);
-      const signer = provider.getSigner();
-      let marketplaceAddress = contractData.address;
-      const marketplacecontract = new ethers.Contract(
-        marketplaceAddress,
-        contractData.abi,
-        signer
-      );
+      // const provider = new ethers.providers.Web3Provider(window.ethereum);
+      // await provider.send("eth_requestAccounts", []);
+      // const signer = provider.getSigner();
+      // let marketplaceAddress = contractData.address;
+      // const marketplacecontract = new ethers.Contract(
+      //   marketplaceAddress,
+      //   contractData.abi,
+      //   signer
+      // );
+      const marketplacecontract = marketplace
       console.log(marketplacecontract);   
       
       const price = ethers.utils.parseEther((item.price).toString());
